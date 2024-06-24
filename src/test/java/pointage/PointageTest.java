@@ -1,14 +1,10 @@
 package pointage;
 
-import com.sanda.pointage.Calendar;
-import com.sanda.pointage.Categorie;
-import com.sanda.pointage.CategoryType;
-import com.sanda.pointage.Employee;
+import com.sanda.pointage.*;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.Month;
+import java.time.*;
 import java.util.List;
 
 public class PointageTest {
@@ -18,8 +14,11 @@ public class PointageTest {
             CategoryType.Gardien,
             56,
             BigDecimal.valueOf(110_000),
-            0
+            0,
+            DayOfWeek.MONDAY,
+            DayOfWeek.SUNDAY
         );
+
         var rakoto = new Employee(
             "rakoto",
             "prenoms",
@@ -27,7 +26,16 @@ public class PointageTest {
             LocalDate.now() /*dateNaissance*/,
             LocalDate.now() /*dateEmbauche*/,
             LocalDate.now() /*finContrat*/,
-            BigDecimal.valueOf(110_000),
+            gardienType
+        );
+
+        var rabe = new Employee(
+            "rabe",
+            "prenoms",
+            "cin",
+            LocalDate.now() /*dateNaissance*/,
+            LocalDate.now() /*dateEmbauche*/,
+            LocalDate.now() /*finContrat*/,
             gardienType
         );
 
@@ -36,6 +44,10 @@ public class PointageTest {
             25,
             26
         ));
+
+        var pointages = List.of(
+            new Pointage(rakoto, LocalTime.of(8, 0), LocalTime.of(17,8))
+        );
 
 
     }

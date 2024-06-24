@@ -1,15 +1,20 @@
 package com.sanda.pointage;
 
+import lombok.AllArgsConstructor;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public record Employee(
-    String nom,
-    String prenoms,
-    String cin,
-    LocalDate dateDeNaissance,
-    LocalDate dateEmbauche,
-    LocalDate finContrat,
-    BigDecimal salaire,
-    Categorie categorie
-) {}
+@AllArgsConstructor
+public class Employee{
+    private String nom;
+    private String prenoms,;
+    private String cin;
+    private LocalDate dateDeNaissance;
+    private LocalDate dateEmbauche;
+    private LocalDate finContrat;
+    private Categorie categorie;
+    public BigDecimal getSalaire(){
+        return BigDecimal.TEN;
+    }
+}
