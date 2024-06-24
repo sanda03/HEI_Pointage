@@ -11,7 +11,7 @@ public class Pointage{
     private LocalTime debut;
     private LocalTime fin;
 
-    public Pointage(Month mois, Employee person, LocalTime debut, LocalTime fin) {
+    public Pointage(Employee person, Month mois, LocalTime debut, LocalTime fin) {
         this.person = person;
         this.debut = debut;
         this.fin = fin;
